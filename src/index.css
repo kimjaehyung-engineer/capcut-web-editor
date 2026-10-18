@@ -1,0 +1,131 @@
+/* CapCut Studio Web - Master Design System */
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+:root {
+  --bg-app: #0c0d10;
+  --bg-surface: #14151a;
+  --bg-card: #1c1d24;
+  --bg-elevated: #242630;
+  --bg-input: #101115;
+  --border-subtle: #262833;
+  --border-active: #3a3d4d;
+
+  /* CapCut Accents */
+  --accent-cyan: #00F2FE;
+  --accent-blue: #4FACFE;
+  --accent-gradient: linear-gradient(135deg, #00F2FE 0%, #4FACFE 100%);
+  --accent-coral: #FF3366;
+  --accent-purple: #8B5CF6;
+  --accent-amber: #F59E0B;
+  --accent-green: #10B981;
+
+  --text-main: #FFFFFF;
+  --text-muted: #94A3B8;
+  --text-dim: #64748B;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  --shadow-glow: 0 0 20px rgba(0, 242, 254, 0.25);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-active);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-dim);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  transition: all 0.15s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+input, textarea, select {
+  font-family: inherit;
+  outline: none;
+  color: var(--text-main);
+  user-select: text;
+}
+
+/* Input Range Styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border-subtle);
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(20, 21, 26, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+}
+
+.gradient-btn {
+  background: var(--accent-gradient);
+  color: #0c0d10;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  box-shadow: 0 2px 10px rgba(0, 242, 254, 0.3);
+}
+.gradient-btn:hover {
+  box-shadow: 0 4px 16px rgba(0, 242, 254, 0.5);
+  filter: brightness(1.1);
+}
