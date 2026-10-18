@@ -1,73 +1,43 @@
-# 🎬 CapCut Studio Web (CutPro Studio)
+# 🎬 CutPro Studio — CapCut Pro Web Video Editor
 
-> **브라우저에서 직접 구동되는 차세대 CapCut Pro 스타일의 멀티트랙 숏폼 비디오 웹 편집기**
-
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Web Audio API](https://img.shields.io/badge/Audio-Web_Audio_API-orange)](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+**CutPro Studio**는 CapCut Pro 데스크톱 편집기의 핵심 워크플로우와 **Obsidian Studio** 다크 테마 UI/UX를 웹 브라우저 환경에서 구현한 멀티트랙 비선형 영상 편집기(NLE)입니다.
 
 ---
 
-## 🌟 주요 핵심 기능 (Key Features)
+## ✨ 주요 기능
 
-### 1. 📱 반응형 화면 비율 & 세이프존 (Safe Zone)
-- **9:16 쇼츠 (YouTube Shorts, TikTok, Reels)**, **16:9 가로**, **1:1 정방형** 화면비 원클릭 전환
-- 틱톡/유튜브 쇼츠 UI에 자막이 가려지지 않도록 방지하는 **세이프존(Safe Zone) 오버레이 가이드** 지원
+### 1. 5트랙 멀티레이어 타임라인 & 정밀 편집
+- **5개 독립 트랙**: `효과(FX)` · `자막/스티커` · `PIP 오버레이` · `메인 비디오` · `오디오(BGM/SFX)`
+- **편집 도구**: 선택 모드(`V`), 면도날 클릭 분할 모드(`B`), 플레이헤드 분할(`Ctrl+B`), 복제(`Ctrl+D`), 프리즈 프레임(`프리즈` - 2초 정지 화면 생성), 좌우 반전(`반전`), 자석 트랙 자동 정렬(`자석`), 클립 스냅(`스냅`)
+- **트랙 제어**: 트랙별 표시/숨김(눈 아이콘), 잠금(자물쇠), 오디오 뮤트, 마커(`M`) 추가 및 점프
 
-### 2. 💬 쇼츠 전용 고시인성 자막 & SRT 연동
-- 인기 쇼츠 자막 프리셋 5종 (옐로우 볼드, 네온 시안, 레드 뱃지, 미니멀 화이트, 네온 바이올렛)
-- **자막 직접 드래그 이동**: 캔버스 화면 위에서 마우스 드래그로 자막 위치 즉시 재배치
-- **CapCut 호환 SRT 내보내기/불러오기**: 실제 CapCut이나 프리미어에서 [자막 가져오기] 한 번으로 싱크가 100% 일치하는 `.srt` 파일 추출
+### 2. 실시간 캔버스 합성 엔진 & 인터랙티브 모니터
+- **캔버스 직접 조작**: 프리뷰 모니터 위에서 자막·스티커·PIP 클립 드래그 이동 및 더블클릭 인라인 텍스트 수정
+- **클립 전환 효과 (8종)**: 디졸브, 블랙 페이드, 화이트 플래시, 슬라이드 좌/우, 줌 인, 와이프 다운
+- **인입/콤보 애니메이션 (7종)**: 줌 인, 페이드 인, 팝업 바운스, 슬라이드 업, 켄 번즈(Ken Burns), 펄스
+- **시각 특수효과 FX (8종)**: 네온 글로우, RGB 글리치, VHS 레트로, 시네마 레터박스, 카메라 쉐이크, 비트 플래시, 스파클 입자, 집중 비네팅
+- **모니터 가이드**: 화면 비율 전환(`9:16 쇼츠`, `16:9 와이드`, `1:1`, `4:5`), 9:16 쇼츠 안전영역 가이드, 3×3 구도 그리드, 현재 프레임 PNG 스냅샷 캡처
 
-### 3. 🎞️ 멀티트랙 타임라인 & 정밀 컷 편집 (Multi-track Timeline)
-- **독립 트랙**: 자막(Purple), 메인 비디오(Cyan), BGM/SFX(Amber) 3단 트랙 분리
-- **컷 분할 (Split)**: 붉은색 스크러버 플레이헤드 위치에서 원클릭 또는 `Ctrl + B`로 싹둑 자르기
-- **트림 (Trim)**: 클립 양 끝단 핸들 드래그로 시작점/끝점 미세 조절
-- **단축키 지원**: 스페이스바(재생/정지), `Ctrl+B`(분할), `Delete`(클립 삭제), `← / →`(0.5초 이동)
+### 3. AI 대본→자막 자동 생성 & 한국어 TTS / 사운드 엔진
+- **AI 대본 자동 분할**: 여러 줄의 대본을 입력하면 문장 단위로 타임라인 자막 트랙에 자동 배치
+- **한국어 AI 보이스(TTS)**: Web Speech API 기반 한국어 음성 합성 동시 재생 및 미리듣기
+- **내장 Web Audio 신디사이저**: 외부 오디오 파일 없이도 즉시 작동하는 4종 BGM 루프(`Lo-Fi Chill`, `Cyberpunk Synth`, `Cinematic Tension`, `Upbeat Pop`) 및 8종 효과음(`딩동`, `우쉬`, `팝`, `시네마틱 붐`, `카메라 셔터`, `매직 차임`, `경보 사이렌`, `타이핑`)
 
-### 4. 🚀 브라우저 네이티브 비디오 렌더링 & 내보내기 (Export)
-- 외부 서버 백엔드 없이 브라우저의 `HTML5 Canvas + MediaRecorder API`를 통해 실시간 30fps 고화질 비디오(`.webm`) 자동 렌더링 및 다운로드
-- 렌더링 프로그레스 바(0~100%) 및 축하 색종이(Confetti) 연출
-
-### 5. 🎵 Web Audio API 오프라인 사운드 엔진
-- 100% 오프라인으로 안정 동작하는 Lo-Fi & Cyber 신디사이저 BGM 및 효과음(Ding, Whoosh, Pop, Boom)
+### 4. 프로 인스펙터 & 렌더링 내보내기
+- **탭 기반 우측 인스펙터**: `기본(위치/크기/회전/불투명도/혼합모드/9포인트 정렬)` · `속도(0.25x~4x)/전환` · `애니메이션` · `색상(8종 시네마틱 LUT 및 밝기/대비/채도/색온도/틴트/비네팅/블러)`
+- **입출력 지원**: 40단계 Undo(`Ctrl+Z`) / Redo(`Ctrl+Y`), 프로젝트 `.JSON` 저장/불러오기, `.SRT` 자막 가져오기/내보내기, **720p / 1080p (30/60fps) WebM VP9 영상 렌더링 내보내기**
 
 ---
 
-## 🚀 빠른 시작 (Getting Started)
+## 🚀 실행 방법
 
-### 요구 사양
-- Node.js 18.0 이상
-
-### 설치 및 로컬 실행
 ```bash
-# 1. 저장소 클론
-git clone https://github.com/kimjaehyung-engineer/capcut-web-editor.git
-cd capcut-web-editor
-
-# 2. 패키지 설치
+# 패키지 설치
 npm install
 
-# 3. 로컬 개발 서버 실행
+# 로컬 개발 서버 실행 (http://localhost:5173)
 npm run dev
+
+# 프로덕션 빌드
+npm run build
 ```
-브라우저에서 `http://127.0.0.1:5173/` 접속 후 즉시 편집기를 사용하실 수 있습니다.
-
----
-
-## 🏗️ 기술 스택 (Tech Stack)
-
-| 구분 | 기술 / 라이브러리 |
-|:---|:---|
-| **Core Framework** | React 19, Vite 8.3 |
-| **Icons** | Lucide React |
-| **Canvas & Video** | HTML5 Canvas 2D API, MediaRecorder API |
-| **Audio Engine** | Web Audio API (Procedural Synthesizer) |
-| **Styling** | Vanilla CSS (CapCut Dark Studio Theme, Obsidian Glassmorphism) |
-| **Animation/FX** | Canvas Confetti |
-
----
-
-## 📄 라이선스 (License)
-This project is licensed under the MIT License.
